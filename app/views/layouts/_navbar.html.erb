@@ -1,4 +1,4 @@
-   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
  <%= link_to "#", class: "navbar-brand" do %>
     <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSyYDotdKbJvjCGPVCw55FYqeqDFXa1cQdnAsfwoa61KR6rs7ih&usqp=CAU" %> <span style="color:white">Plantify</span>
   <% end %>
@@ -10,19 +10,28 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to "Home", "#", class: "nav-link" %>
-      </li>
-       <li class="nav-item active">
-        <%= link_to "My Profile", "#", class: "nav-link" %>
-      </li>
-      <li class="nav-item active">
+      <% if user_signed_in? %>
+   <li class="nav-item active">
         <%= link_to "Add a plant", "#", class: "nav-link btn btn-ghost" %>
-      </li>
-<!--       <li class="nav-item">
-        <%= link_to "Messages", "#", class: "nav-link" %>
-      </li> -->
-      </li>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Messages", "#", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Action", "#",class: "nav-link"%>
+          </li>
+          <li class="nav-item">
+          <%= link_to "Another action", "#",class: "nav-link"%>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Log out", destroy_user_session_path,  method: :delete, class: "nav-link" %>
+          </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </div>
+
