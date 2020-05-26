@@ -1,6 +1,6 @@
 .banner {
   background-size: cover;
-  background-position: cover;
+  background-position: center;
   padding: 150px 0;
   // background-color: #2d4d36;
   justify-content: space-between;
@@ -8,9 +8,18 @@
   display: flex;
   align-items: center;
   margin-bottom: 32px;
+  height: 500px;
 }
 
+.container{
+  height: min-content;
+
+}
 .banner h1 {
   color: white;
-  // text-align: center;
+  text-align: center;
+}
+
+h3,p{
+  color: black;
 }

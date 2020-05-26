@@ -1,0 +1,41 @@
+$grey: #dbdbdb;
+$de: #54665e;
+
+.card {
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  border-radius: 20px;
+  margin: 5% auto;
+  transition: all .2s ease-in-out;
+  width: 200px;
+  padding: 20px;
+  text-align: center;
+}
+
+
+.card:hover{
+  box-shadow: 10px 10px 5px $grey;
+}
+
+.card-link {
+  color: $de;
+  margin: 0;
+  font-size: 22px;
+  text-decoration: none !important;
+}
+
+.card-link:hover {
+  text-decoration: none !important;
+  color: #668895 !important;
+}
+
+
+h3{
+  color: $de;
+}
+
+.home-img{
+  margin: 0 auto;
+}
