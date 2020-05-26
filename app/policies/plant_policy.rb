@@ -6,7 +6,11 @@ class PlantPolicy < ApplicationPolicy
   end
 
   def create?
-    return true
+    true
   end
 
+  def show?
+    true
+  end
+  
 end
