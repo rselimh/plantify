@@ -1,4 +1,28 @@
-<p>
-  <strong>Name:</strong>
- 
-</p>
+<div class="container">
+
+  <div class="row justify-content-center">
+    <p> javascript, cloudify input <p> <a href="https://via.placeholder.com/150"><img src="https://via.placeholder.com/150"></a>
+  </div>
+  
+
+<div class="container">
+  <h2> <%= @plant.name %> </h2>
+  <div class="flex-item">
+    <p> <em> Description: </em> <br> 
+    <%= @plant.description %>
+    <div class="flex-container">
+     <div>
+      <p> <strong> Rental details </strong> </p>
+      <p> <i class="fa fa-map-marker" aria-hidden="true"></i> <%= @plant.address %></p>
+      <p><em> <i class="fa fa-credit-card" aria-hidden="true"></i> daily price: </em><%= @plant.price_per_day %> €</p>
+      <p><em> Status: </em><%= @plant.status %> 
+     </div>
+     <div>
+       <p> user.avatar </p>
+       <p> user.name </p>
+       <p> user.description </p>
+       <p> user.review </p>
+    </div>
+   </div>
+</div>
+</div>
