@@ -5,7 +5,11 @@ class BookingPolicy < ApplicationPolicy
     end
   end
 
-    def new?
+  def new?
     return true
-    end
+  end
+
+  def create?
+    return true
+  end
 end
