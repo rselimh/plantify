@@ -17,5 +17,8 @@ class PlantPolicy < ApplicationPolicy
     true
   end
   
+  def update?
+    true
+  end
   
 end

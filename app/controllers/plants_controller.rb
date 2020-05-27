@@ -1,4 +1,5 @@
 class PlantsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
      @plants = policy_scope(Plant)
@@ -35,6 +36,7 @@ class PlantsController < ApplicationController
 
   def update
     @plant = Plant.find(params[:id])
+    authorize @plant
     if @plant.update(plant_params)
       redirect_to @plant, notice: 'Plant was successfully updated.'
     else
