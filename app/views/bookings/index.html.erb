@@ -1,13 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Your Booking</h1>
+<h1>Your Reservatons</h1>
 
 <table>
   <tbody>
     <% @bookings.each do |booking| %>
-      <tr>
-        <td><%= booking.start_date %></td>
-        <td><%= booking.end_date %></td>
-        <% end %>
-    </tbody>
-</table>
+    <tr>
+      <td><%= booking.plant.name %></td>
+     <td><%= booking.start_date %></td>
+     <td><%= booking.end_date %></td>
+     <% end %>
+   </tbody>
+ </table>
