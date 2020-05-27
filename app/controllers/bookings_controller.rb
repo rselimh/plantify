@@ -11,11 +11,12 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @plant = Plant.find(params[:plant_id])
+    @booking.user = current_user
     @booking.plant = @plant
     authorize @booking
 
     if @booking.save
-      redirect_to plant_path(@plant)
+       redirect_to @plant, notice: 'Plant was booked.'
     else
       render :new
     end
@@ -24,7 +25,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:end_date, :start_date, :user_id, :total_price)
+    params.require(:booking).permit(:end_date, :start_date)
   end
 
 end
