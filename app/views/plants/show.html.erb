@@ -6,7 +6,7 @@
  <div class="container">
   <h2> <%= @plant.name %> </h2>
   <div class="flex-item">
-    <p> <em> Description: </em> <br> 
+    <p> <em> Description: </em> <br>
     <%= @plant.description %>
   </div>
   </div>
@@ -18,7 +18,7 @@
           <p> <strong> Rental details </strong> </p>
           <p> <em> <%= image_tag "home-52.svg", alt: "home-img",width: 20, class: 'show-img' %> location: </em> <%= @plant.address %></p>
           <p><em>  <%= image_tag "payment.svg", alt: "payment-img",width: 20, class: 'show-img' %> daily price: </em><%= @plant.price_per_day %> €</p>
-          <p><em>  <%= image_tag "available.svg", alt: "available-img",width: 20, class: 'show-img' %>status: </em><%= @plant.status %> 
+          <p><em>  <%= image_tag "available.svg", alt: "available-img",width: 20, class: 'show-img' %>status: </em><%= @plant.status %>
           </div>
         </div>
       </div>
@@ -29,6 +29,12 @@
           <p> user.name </p>
           <p> user.description </p>
           <p> user.review </p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card booking">
+           <p><%= link_to 'Book this plant !', new_plant_booking_path(@plant), class: 'btn btn-primary'%></p>
         </div>
       </div>
     </div>
