@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Plants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Price per Day</th>
+      <th colspan="4"></th> <!-- specifies the number of columns a cell should span -->
+    </tr>
+  </thead>
+  <tbody>
+    <% @plants.each do |plant| %>
+      <tr>
+        <td><%= plant.name %></td>
+        <td><%= plant.address %></td>
+        <td><%= plant.price_per_day %></td>
+        <td><%= link_to 'Show', plant%></td>
+        <% end %>
+    </tbody>
+</table>
