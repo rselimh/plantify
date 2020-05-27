@@ -10,6 +10,11 @@ class PlantsController < ApplicationController
     authorize @plant
   end
 
+  def edit
+    @plant = Plant.find(params[:id])
+    authorize @plant
+  end
+
   def new
     @plant = Plant.new
     authorize @plant
@@ -27,6 +32,16 @@ class PlantsController < ApplicationController
       render :new
     end
   end
+
+  def update
+    @plant = Plant.find(params[:id])
+    if @plant.update(plant_params)
+      redirect_to @plant, notice: 'Plant was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
 
   private
 
