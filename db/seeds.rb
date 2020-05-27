@@ -62,7 +62,7 @@ end
       description: Faker::Hipster.sentence(word_count: 3),
       address: Faker::Address.street_address,
       price_per_day: Faker::Number.number(digits: 2),
-      status: ""pending""
+      status: "pending"
       )
     plant.user = user
     plant.save!
