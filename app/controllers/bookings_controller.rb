@@ -1,5 +1,11 @@
 class BookingsController < ApplicationController
 
+  def index
+     @bookings = policy_scope(Booking)
+
+  end
+  end
+
   def new
     @plant = Plant.find(params[:plant_id])
     @booking = Booking.new
@@ -15,7 +21,7 @@ class BookingsController < ApplicationController
     authorize @booking
 
     if @booking.save
-       redirect_to @plant, notice: 'Plant was booked.'
+       redirect_to @booking, notice: 'Plant was booked.'
     else
       render :new
     end

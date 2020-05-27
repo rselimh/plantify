@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Your Booking</h1>
+
+<table>
+  <tbody>
+    <% @booking.each do |plant| %>
+      <tr>
+        <td><%= plant.name %></td>
+        <td><%= plant.address %></td>
+        <td><%= plant.price_per_day %></td>
+        <% end %>
+    </tbody>
+</table>
