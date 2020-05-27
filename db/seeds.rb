@@ -18,42 +18,58 @@ puts "Create plants"
     email: Faker::Internet.email,
     password: "123456"
     )
-  5.times do
-  plant = Plant.new(
-    name: Faker::Company.catch_phrase,
-    description: Faker::Hipster.sentence(word_count: 3),
-    address: Faker::Address.street_address,
-    price_per_day: Faker::Number.number(digits: 2),
-    status: "declined"
-  )
-  plant.user = user
-  plant.save!
-end
+  2.times do
+    plant = Plant.new(
+      name: Faker::Cannabis.strain,
+      description: Faker::Hipster.sentence(word_count: 3),
+      address: Faker::Address.street_address,
+      price_per_day: Faker::Number.number(digits: 2),
+      status: "declined"
+      )
+    plant.user = user
+    plant.save!
+  end
 
 end
 
+5.times do
+  user = User.create!(
+    email: Faker::Internet.email,
+    password: "123456"
+    )
+  2.times do
+    plant = Plant.new(
+      name: Faker::Cannabis.strain,
+      description: Faker::Hipster.sentence(word_count: 3),
+      address: Faker::Address.street_address,
+      price_per_day: Faker::Number.number(digits: 2),
+      status: "approved"
+      )
+    plant.user = user
+    plant.save!
+  end
 
+end
 
+5.times do
+  user = User.create!(
+    email: Faker::Internet.email,
+    password: "123456"
+    )
+  2.times do
+    plant = Plant.new(
+      name: Faker::Cannabis.strain,
+      description: Faker::Hipster.sentence(word_count: 3),
+      address: Faker::Address.street_address,
+      price_per_day: Faker::Number.number(digits: 2),
+      status: ""pending""
+      )
+    plant.user = user
+    plant.save!
+  end
 
-# 5.times do
-#   Plant.create!(
-#     name: Faker::Company.catch_phrase,
-#     description: Faker::Hipster.sentence(word_count: 3),
-#     address: Faker::Address.street_address,
-#     price_per_day: Faker::Number.number(digits: 2),
-#     status: "approved"
-#   )
-# end
+end
 
-# 5.times do
-#   Plant.create!(
-#     name: Faker::Company.catch_phrase,
-#     description: Faker::Hipster.sentence(word_count: 3),
-#     address: Faker::Address.street_address,
-#     price_per_day: Faker::Number.number(digits: 2),
-#     status:"pending"
-#   )
-# end
 
 
 puts 'Finished!'
