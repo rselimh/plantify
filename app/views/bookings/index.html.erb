@@ -4,11 +4,10 @@
 
 <table>
   <tbody>
-    <% @booking.each do |plant| %>
+    <% @bookings.each do |booking| %>
       <tr>
-        <td><%= plant.name %></td>
-        <td><%= plant.address %></td>
-        <td><%= plant.price_per_day %></td>
+        <td><%= booking.start_date %></td>
+        <td><%= booking.end_date %></td>
         <% end %>
     </tbody>
 </table>

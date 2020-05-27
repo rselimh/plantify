@@ -1,9 +1,7 @@
 class BookingsController < ApplicationController
 
   def index
-     @bookings = policy_scope(Booking)
-
-  end
+    @bookings = policy_scope(Booking)
   end
 
   def new
@@ -21,7 +19,7 @@ class BookingsController < ApplicationController
     authorize @booking
 
     if @booking.save
-       redirect_to @booking, notice: 'Plant was booked.'
+       redirect_to bookings_path, notice: 'Plant was booked.'
     else
       render :new
     end
