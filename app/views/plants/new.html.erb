@@ -6,7 +6,7 @@
   <%= f.select :status, collection: Plant::STATUSES %>
   <%= f.input :address %>
   <%= f.input :price_per_day %>
-  <%= f.input :photo, as: :file %> <%# # TODO Cloudinary %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit "Add plant", class: "btn btn-primary" %>
 <% end %>
 

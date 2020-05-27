@@ -1,6 +1,8 @@
 <div class="container">
  <div class="row justify-content-center">
-    <a href="https://via.placeholder.com"><img src="https://via.placeholder.com/400"></a>
+    <% @plant.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %>
+    <% end %>
  <div class="container">
   <h2> <%= @plant.name %> </h2>
   <div class="flex-item">
@@ -22,6 +24,7 @@
       </div>
       <div class="col-12 col-md-6 col-lg-4">
         <div class="card">
+          <p> <%= @plant.user.email %> </p>
           <p> user.avatar </p>
           <p> user.name </p>
           <p> user.description </p>
@@ -31,11 +34,3 @@
     </div>
    </div>
 </div>
-
-
-
-
-
-
-
-}
