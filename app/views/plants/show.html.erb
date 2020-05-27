@@ -1,7 +1,11 @@
 <div class="container">
 
   <div class="row justify-content-center">
-    <p> javascript, cloudify input <p> <a href="https://via.placeholder.com/150"><img src="https://via.placeholder.com/150"></a>
+    <p> javascript, cloudify input, multiple images carousel <p> <%# # TODO Javascript multiple image carousel %>
+    <br>
+    <% @plant.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %>
+    <% end %>
   </div>
   
 
@@ -18,6 +22,7 @@
       <p><em> Status: </em><%= @plant.status %> 
      </div>
      <div>
+       <p> <%= @plant.user.email %> </p>
        <p> user.avatar </p>
        <p> user.name </p>
        <p> user.description </p>
