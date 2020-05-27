@@ -11,6 +11,8 @@ class PlantsController < ApplicationController
   end
 
   def edit
+    @plant = Plant.find(params[:id])
+    authorize @plant
   end
 
   def new

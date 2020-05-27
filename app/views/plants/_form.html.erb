@@ -1,0 +1,13 @@
+<div class="container">
+
+<%= simple_form_for(@plant) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.select :status, collection: Plant::STATUSES %>
+  <%= f.input :address %>
+  <%= f.input :price_per_day %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.submit "Edit plant", class: "btn btn-primary" %>
+<% end %>
+
+</div>
