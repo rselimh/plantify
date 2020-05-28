@@ -1,0 +1,21 @@
+<div class="notice">
+  <%= notice %>
+</div>
+
+
+<h1>Your Booking</h1>
+
+ <div class="container">
+  <div class="card col-3 mt-3" style="width: 18rem;>
+  <h5 class="card-title"> Plant: <%= @booking.plant.name %></h5>
+    <p class="card-text">Start date: <%= @booking.start_date %></p>
+      <p class="card-text">End date: <%= @booking.end_date %></p>
+
+
+    <%= link_to 'Back to your profile', bookings_path, class: "btn btn-flat" %>
+
+  </div>
+
+
+
+

@@ -1,14 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div class="notice alert alert-warning alert-dismissible">
+  <%= notice %>
+</div>
+
 
 <h1>Your Reservations</h1>
 
-<table>
-  <tbody>
-    <% @bookings.each do |booking| %>
-    <tr>
-      <td><%= booking.plant.name %></td>
-     <td><%= booking.start_date %></td>
-     <td><%= booking.end_date %></td>
-     <% end %>
-   </tbody>
- </table>
+<div class="container">
+  <div class="row">
+     <% @bookings.each do |booking| %>
+     <div class="card col-3 mt-3" style="width: 18rem;>
+      <h5 class="card-title">Plant: <%= booking.plant.name  %></h5>
+      <p class="card-text">Start date: <%= booking.start_date %></p>
+      <p class="card-text">End date: <%=booking.end_date %></p>
+      <p><%= link_to 'Show this booking', booking, class: 'card-link'%></p>
+        <p><%= link_to "Cancel my booking ",booking_path(booking.id), method: :delete, data: { confirm: "Are you sure?" } %></p>
+      </div>
+      <% end %>
+</div>
+
