@@ -1,15 +1,18 @@
 .btn-ghost {
-  color: $greenswap;
-  border: 1px solid $greenswap;
+  padding-right: 12px;
+  color:white !important;
+  padding-left: 12px;
+  background-color:$greenswap;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
 }
 
 .btn-ghost:hover {
-  opacity: 1;
+  background-color:$greenswap;
+  color:black !important;
+  transition: opacity 0.3s ease;
+  text-decoration:none;
 }
 
 .btn-flat {
@@ -39,3 +42,22 @@
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
 }
+
+.button_cont{
+  color: #494949 !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ffffff;
+  padding: 6px;
+  border: 4px solid #494949 !important;
+  display: inline-block;
+  transition: all 0.4s ease 0s;
+  font-size: 12px;
+}
+
+ .button_cont:hover{
+  color: #ffffff !important;
+  background: #54665e;
+  border-color: $greenswap !important;
+  transition: all 0.4s ease 0s;
+ }
