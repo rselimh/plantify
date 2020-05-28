@@ -1,38 +1,10 @@
 <!-- <h1>Plantify</h1>
 <p>Find me in app/views/pages/home.html.erb</p> -->
-
 <div class="banner">
   <div class="container">
-    <h1><span id="banner-typed-text"></span></h1>
+    <h1>Plantify</h1>
+    <h2><span id="banner-typed-text"></span></h2>
+    <p><%= link_to "Rent a Plant", plants_path, class: 'button_cont home-text' %></p>
   </div>
 </div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-12 col-md-6 col-lg-4">
-     <div class="card">
-
-      <%= image_tag "signin.svg", alt: "signin_image", width: 100, class: 'home-img' %>
-      <div class="card-description", style="color: white; text-align: center;">
-        <h3><%= link_to "Sign Up", new_user_registration_path, class: 'card-link' %></h3>
-        <p></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-12 col-md-6 col-lg-4">
-    <div class="card">
-      <%= image_tag "plant.svg", alt: "plnt-img",width: 100,class: 'home-img'%>
-      <h3><%= link_to "Rent a Plant", plants_path, class: 'card-link' %></h3>
-      <p></p>
-    </div>
-  </div>
-  <div class="col-12 col-md-6 col-lg-4">
-    <div class="card">
-      <%= image_tag "money.svg", alt: "money-img",width: 100, class: 'home-img' %>
-      <h3>Make Money</h3>
-      <p></p>
-    </div>
-  </div>
-</div>
-
 
