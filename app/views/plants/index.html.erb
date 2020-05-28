@@ -2,37 +2,22 @@
 
 <h1>Plants</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Price per Day</th>
-      <th colspan="4"></th> <!-- specifies the number of columns a cell should span -->
-    </tr>
-  </thead>
-  <tbody>
-    <% @plants.each do |plant| %>
-      <tr>
-        <td><%= plant.name %></td>
-        <td><%= plant.address %></td>
-        <td><%= plant.price_per_day %></td>
-        <td><%= link_to 'Show', plant, class: 'card-link'%></td>
-        <% end %>
-    </tbody>
-</table>
-
-
-<div class="card-trip">
-  <% @plants.each do |plant| %>
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="card-trip-infos">
-    <div>
+<div class="flex-container">
+ <% @plants.each do |plant| %>
+ <div class="card-plant">
+ <% plant.photos do |photo| %>
+    <%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %>
+  <% end %>
+  <div class="card-plant-infos">
       <h2><%= plant.name %></h2>
-      <p><%= plant.address %></p>
+      <p><%= image_tag "home-52.svg", alt: "home-img",width: 20, class: 'show-img' %><%= plant.address %></p>
     </div>
-    <h2 class="card-trip-pricing"><%= plant.price_per_day %>€</h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    <div>
+    <div class="flex-container-grid">
+    <p class="card-plant-pricing"> daily price: <%= plant.price_per_day %>€</p>
+  <%= link_to 'Show', plant, class: "btn btn-flat" %> 
+  </div>
+  </div>
   </div>
   <% end %>
 </div>

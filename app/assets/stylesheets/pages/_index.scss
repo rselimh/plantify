@@ -1,2 +1,24 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.flex-container {
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card-plant {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  flex: 0 0 33.333333%;
+  border-radius: 20px;
+  margin: 5px;
+  width: 90%;
+  padding: 10px;
+  text-align: center;
+  }
+
+.flex-container-grid {
+   display: grid;
+}
