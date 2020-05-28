@@ -1,5 +1,6 @@
 class PlantsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
+  before_action :set_plant, only: [:show, :edit, :destroy]
 
   def index
      @plants = policy_scope(Plant)
@@ -7,13 +8,9 @@ class PlantsController < ApplicationController
   end
 
   def show
-    @plant = Plant.find(params[:id])
-    authorize @plant
   end
 
   def edit
-    @plant = Plant.find(params[:id])
-    authorize @plant
   end
 
   def new
@@ -44,6 +41,11 @@ class PlantsController < ApplicationController
     end
   end
 
+  def destroy
+    @plant.destroy
+    redirect_to plants_path, notice: 'Plant was deleted'
+  end
+
 
   private
 
@@ -51,5 +53,9 @@ class PlantsController < ApplicationController
     params.require(:plant).permit(:name, :description, :status, :address, :price_per_day, photos: [])
   end
 
+  def set_plant
+    @plant = Plant.find(params[:id])
+    authorize @plant
+  end
 end
 

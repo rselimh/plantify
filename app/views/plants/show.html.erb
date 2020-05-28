@@ -38,8 +38,14 @@
     <br>
     <br>
      <div class="container">
-      <%= link_to 'Back', plants_path, class: "btn btn-flat" %> 
-      <%= link_to 'Edit', edit_plant_path(@plant), class: "btn btn-flat" %> 
+      <%= link_to 'Back', plants_path, class: "btn btn-flat" %>
+      <%= link_to 'Edit', edit_plant_path(@plant), class: "btn btn-flat"%>
+      <%= link_to plants_path, method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <i class="btn btn-flat">Delete</i>
+                <% end %>
       <%= link_to 'Book this plant !', new_plant_booking_path(@plant), class: 'btn btn-primary'%>
+
 </div>
 </div>
+
+
