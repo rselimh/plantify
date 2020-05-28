@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Plants</h1>
-
 <table>
   <thead>
     <tr>
@@ -13,6 +12,7 @@
   </thead>
   <tbody>
     <% @plants.each do |plant| %>
+
       <tr>
         <td><%= plant.name %></td>
         <td><%= plant.address %></td>
@@ -21,3 +21,4 @@
         <% end %>
     </tbody>
 </table>
+
