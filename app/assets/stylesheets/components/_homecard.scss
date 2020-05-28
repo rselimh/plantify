@@ -1,7 +1,7 @@
 $grey: #dbdbdb;
 $de: #54665e;
 
-.card {
+.home-card {
   height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
@@ -15,18 +15,18 @@ $de: #54665e;
 }
 
 
-.card:hover{
+.home-card:hover{
   box-shadow: 10px 10px 5px $grey;
 }
 
-.card-link {
+.home-card-link {
   color: $de;
   margin: 0;
   font-size: 18px;
   text-decoration: none !important;
 }
 
-.card-link:hover {
+.home-card-link:hover {
   text-decoration: none !important;
   color: #668895 !important;
 }

@@ -4,20 +4,20 @@
 
 <div class="flex-container">
  <% @plants.each do |plant| %>
- <div class="card-plant">
- <% plant.photos do |photo| %>
-    <%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %>
+  <div class="card-plant">
+   <% plant.photos do |photo| %>
+   <%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %>
   <% end %>
   <div class="card-plant-infos">
-      <h2><%= plant.name %></h2>
-      <p><%= image_tag "home-52.svg", alt: "home-img",width: 20, class: 'show-img' %><%= plant.address %></p>
-    </div>
-    <div>
+    <h2><%= plant.name %></h2>
+    <p><%= image_tag "home-52.svg", alt: "home-img",width: 20, class: 'show-img' %><%= plant.address %></p>
+  </div>
+   <div>
     <div class="flex-container-grid">
-    <p class="card-plant-pricing"> daily price: <%= plant.price_per_day %>€</p>
-  <%= link_to 'Show', plant, class: "btn btn-flat" %> 
+    <p class="card-plant-pricing"> daily price: <%= plant.price_per_day %>€</p> 
+    <%= link_to 'Show', plant, class: "btn btn-flat" %> 
+   </div>
   </div>
   </div>
-  </div>
-  <% end %>
+ <% end %>
 </div>
