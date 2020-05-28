@@ -1,14 +1,27 @@
-<p id="notice"><%= notice %></p>
+<div class="notice">
+  <%= notice %>
+</div>
 
-<h1>Your Reservations</h1>
 
-<table>
-  <tbody>
-    <% @bookings.each do |booking| %>
-    <tr>
-      <td><%= booking.plant.name %></td>
-     <td><%= booking.start_date %></td>
-     <td><%= booking.end_date %></td>
-     <% end %>
-   </tbody>
- </table>
+
+  <h1>Your Reservations</h1>
+  <table>
+    <tbody>
+      <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.user.email %></td>
+        <td><%= booking.plant.name %></td>
+        <td><%= booking.start_date %></td>
+        <td><%= booking.end_date %></td>
+        <td><%= link_to 'Show this booking', booking, class: 'card-link'%></td>
+        <% end %>
+      </tbody>
+    </table>
+
+
+
+
+
+
+ user.plants.each
+ plant.photos.each

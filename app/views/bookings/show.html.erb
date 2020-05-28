@@ -1,0 +1,21 @@
+<div class="notice">
+  <%= notice %>
+</div>
+
+
+<div class="container mx-auto mr-3">
+  <h1>Your Booking</h1>
+
+
+  <div class="container">
+    <td><%= @booking.plant.name %></td>
+    <td><%= @booking.start_date %></td>
+    <td><%= @booking.end_date %></td>
+  </div>
+  <div>
+    <%= link_to 'Back to your profile', bookings_path, class: "btn btn-flat" %>
+    <%= link_to "Delete ",
+    booking_path(@booking),
+    method: :delete,
+    data: { confirm: "Are you sure?" } %>
+  </div>

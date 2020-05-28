@@ -12,4 +12,12 @@ class BookingPolicy < ApplicationPolicy
   def create?
     return true
   end
+
+  def show?
+    return true
+  end
+
+  def delete?
+    return true
+  end
 end
