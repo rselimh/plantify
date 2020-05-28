@@ -17,7 +17,7 @@ class BookingPolicy < ApplicationPolicy
     return true
   end
 
-  def delete?
+  def destroy?
     return true
   end
 end

@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @plant = @booking.plant
+    raise
     @booking.user = current_user
     authorize @booking
   end
@@ -29,24 +29,25 @@ class BookingsController < ApplicationController
      redirect_to bookings_path, notice: 'Plant was booked 🌱'
    else
     render :new
+    end
   end
 
   def destroy
+    raise
+    @plant = @booking.plant_id
     @booking.destroy
     authorize @booking
-    redirect_to root_path
+    redirect_to bookings_path
   end
 
-end
+  private
 
-private
+  def booking_params
+    params.require(:booking).permit(:end_date, :start_date, :plant_id)
+  end
 
-def booking_params
-  params.require(:booking).permit(:end_date, :start_date)
-end
-
-def set_booking
-  @booking = Booking.find(params[:id])
-end
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
 
 end

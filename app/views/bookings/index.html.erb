@@ -5,7 +5,6 @@
 
 <h1>Your Reservations</h1>
 
-
 <div class="container">
   <div class="row">
      <% @bookings.each do |booking| %>
@@ -14,10 +13,7 @@
       <p class="card-text">Start date: <%= booking.start_date %></p>
       <p class="card-text">End date: <%=booking.end_date %></p>
       <p><%= link_to 'Show this booking', booking, class: 'card-link'%></p>
-        <p><%= link_to "Delete ", booking_path(@booking),
-    method: :delete,
-    data: { confirm: "Are you sure?" } %>
-    </p>
+        <p><%= link_to "Cancel my booking ",booking_path(booking.id), method: :delete, data: { confirm: "Are you sure?" } %></p>
       </div>
       <% end %>
 </div>
