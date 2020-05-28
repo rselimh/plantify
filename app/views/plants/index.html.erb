@@ -1,24 +1,25 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Plants</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Price per Day</th>
-      <th colspan="4"></th> <!-- specifies the number of columns a cell should span -->
-    </tr>
-  </thead>
-  <tbody>
-    <% @plants.each do |plant| %>
 
-      <tr>
-        <td><%= plant.name %></td>
-        <td><%= plant.address %></td>
-        <td><%= plant.price_per_day %></td>
-        <td><%= link_to 'Show', plant, class: 'card-link'%></td>
-        <% end %>
-    </tbody>
-</table>
-
+<div class="flex-container">
+ <% @plants.each do |plant| %>
+  <div class="card-plant">
+  <div class="row justify-content-center">
+  <% if !plant.photos.first.nil?%>
+   <%= cl_image_tag plant.photos.first.key, height: 200, width: 300, crop: :fill %>
+   <% else %>
+   <%= image_tag "placeholder.png", alt: "placeholder-img", height: 200, width: 300 %>
+  <% end %>
+  </div>
+  <div class="card-plant-infos">
+    <h2><%= plant.name %></h2>
+  </div>
+   <div>
+    <div class="flex-container-grid">
+    <p><%= image_tag "home-52.svg", alt: "home-img",width: 20, class: 'show-img' %><%= plant.address %></p>
+    <p class="card-plant-pricing"> daily price: <%= plant.price_per_day %>€</p> 
+    <%= link_to 'Show', plant, class: "btn btn-flat" %> 
+   </div>
+  </div>
+  </div>
+ <% end %>
+</div>
