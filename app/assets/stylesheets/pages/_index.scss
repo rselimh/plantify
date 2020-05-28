@@ -15,8 +15,13 @@
   width: 90%;
   padding: 10px;
   text-align: center;
+  padding-top: 0;
   }
 
 .flex-container-grid {
    display: grid;
+}
+
+.card-plant h2 {
+  padding: 10px;
 }
