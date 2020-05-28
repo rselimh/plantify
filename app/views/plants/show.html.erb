@@ -1,38 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
- <div class="row justify-content-center">
-    <% @plant.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %>
-    <% end %>
- <div class="container">
-  <h2> <%= @plant.name %> </h2>
-  <div class="flex-item">
-    <p> <em> Description: </em> <br>
-    <%= @plant.description %>
+ <div class="flex-container">
+  <h2><%= @plant.name %></h2>
+  <div class="card-plant">
+    <div class="card-plant-infos">
+  </div>
+   <div>
+    <div class="flex-container-grid">
+    <p> <strong> Rental details </strong> </p>
+    <p><%= image_tag "home-52.svg", alt: "home-img",width: 20, class: 'show-img' %><%= @plant.address %></p>
+    <p><%= image_tag "payment.svg", alt: "payment-img",width: 20, class: 'show-img' %> daily price: <%= @plant.price_per_day %>€</p> 
+    <p><%= image_tag "available.svg", alt: "available-img",width: 20, class: 'show-img' %>status:<%= @plant.status %></p> 
+    <%= link_to 'Book this plant !', new_plant_booking_path(@plant), class: 'btn btn-primary'%>
+   </div>
   </div>
   </div>
- </div>
-    <div class="container-space-between">
-      <div class="row">
-        <div class="col-12 col-md-6 col-lg-4">
-        <div class="card">
-          <p> <strong> Rental details </strong> </p>
-          <p> <em> <%= image_tag "home-52.svg", alt: "home-img",width: 20, class: 'show-img' %> location: </em> <%= @plant.address %></p>
-          <p><em>  <%= image_tag "payment.svg", alt: "payment-img",width: 20, class: 'show-img' %> daily price: </em><%= @plant.price_per_day %> €</p>
-          <p><em>  <%= image_tag "available.svg", alt: "available-img",width: 20, class: 'show-img' %>status: </em><%= @plant.status %>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="card">
-          <p> <%= @plant.user.email %> </p>
-          <p> user.avatar </p>
-          <p> user.name </p>
-          <p> user.review </p>
-        </div>
-      </div>
-      </div>
+</div>
+  
     </div>
     <br>
     <br>
@@ -41,9 +26,7 @@
       <%= link_to 'Back', plants_path, class: "btn btn-flat" %>
       <%= link_to 'Edit', edit_plant_path(@plant), class: "btn btn-flat"%>
       <%= link_to "Delete", plant_path(@plant), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-flat"%>
-      <%= link_to 'Book this plant !', new_plant_booking_path(@plant), class: 'btn btn-primary'%>
 
-</div>
-</div>
+  </div>
 
 
