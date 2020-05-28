@@ -12,7 +12,6 @@ class BookingsController < ApplicationController
   end
 
   def show
-    raise
     @booking.user = current_user
     authorize @booking
   end
