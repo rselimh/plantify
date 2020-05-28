@@ -1,27 +1,24 @@
-<div class="notice">
+<div class="notice alert alert-warning alert-dismissible">
   <%= notice %>
 </div>
 
 
-
-  <h1>Your Reservations</h1>
-  <table>
-    <tbody>
-      <% @bookings.each do |booking| %>
-      <tr>
-        <td><%= booking.user.email %></td>
-        <td><%= booking.plant.name %></td>
-        <td><%= booking.start_date %></td>
-        <td><%= booking.end_date %></td>
-        <td><%= link_to 'Show this booking', booking, class: 'card-link'%></td>
-        <% end %>
-      </tbody>
-    </table>
+<h1>Your Reservations</h1>
 
 
+<div class="container">
+  <div class="row">
+     <% @bookings.each do |booking| %>
+     <div class="card col-3 mt-3" style="width: 18rem;>
+      <h5 class="card-title">Plant: <%= booking.plant.name  %></h5>
+      <p class="card-text">Start date: <%= booking.start_date %></p>
+      <p class="card-text">End date: <%=booking.end_date %></p>
+      <p><%= link_to 'Show this booking', booking, class: 'card-link'%></p>
+        <p><%= link_to "Delete ", booking_path(@booking),
+    method: :delete,
+    data: { confirm: "Are you sure?" } %>
+    </p>
+      </div>
+      <% end %>
+</div>
 
-
-
-
- user.plants.each
- plant.photos.each
