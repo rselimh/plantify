@@ -8,6 +8,12 @@
   font-weight: lighter;
 }
 
+#booking-btn.btn-ghost{
+  padding: 5px;
+  font-size: 12px;
+}
+
+
 .btn-ghost:hover {
   background-color:$greenswap;
   color:black !important;
@@ -67,3 +73,5 @@
   right:    50px;
   bottom:   100px;
 }
+
+

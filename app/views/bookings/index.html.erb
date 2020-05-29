@@ -1,13 +1,12 @@
 <div class="container">
-
-    <%= notice %>
-
-
-
-  <div>
-    <h1>Your Reservations</h1>
+  <div class="d-flex">
+    <div class="booking-container">
+      <%= link_to 'Back to Plants', plants_path, id: "booking-btn", class: "btn-ghost"  %>
+    </div>
+  <div class="booking-header">
+    <h1>Bookings</h1>
   </div>
-
+    </div>
   <div class="flex-container">
      <% @bookings.each do |booking| %>
      <div class="card card-plant" style="width: 18rem;">
@@ -20,9 +19,5 @@
    </div>
  </div>
  <% end %>
-
-   <div id="fixedbutton">
-      <%= link_to 'Back to plants', plants_path, class: "btn-ghost" %>
-    </div>
 </div>
 </div>
