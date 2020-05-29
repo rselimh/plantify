@@ -11,13 +11,15 @@
     </ol>
 
     <div class="carousel-inner">
+    <% if !@plant.photos.first.nil?%>
       <% @plant.photos.each_with_index do |photo, index| %>
       <div class="carousel-item <%= 'active' if (index == 0) %>">
         <%= cl_image_tag photo.key, create_derived: true, bytes_step: 20000, min_width: 200, max_width: 400, transformation: {
           crop: :fill, aspect_ratio: "16:9", gravity: :auto}, class: 'd-block w-50' %>
         </div>
-
         <% end %>
+      <% end %>
+ 
       </div>
     </div>
   </div>
