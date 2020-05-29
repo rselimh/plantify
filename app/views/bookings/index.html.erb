@@ -1,20 +1,28 @@
-<div class="notice alert alert-warning alert-dismissible">
-  <%= notice %>
-</div>
-
-
-<h1>Your Reservations</h1>
-
 <div class="container">
-  <div class="row">
-     <% @bookings.each do |booking| %>
-     <div class="card col-3 mt-3" style="width: 18rem;>
-      <h5 class="card-title">Plant: <%= booking.plant.name  %></h5>
-      <p class="card-text">Start date: <%= booking.start_date %></p>
-      <p class="card-text">End date: <%=booking.end_date %></p>
-      <p><%= link_to 'Show this booking', booking, class: 'card-link'%></p>
-        <p><%= link_to "Cancel my booking ",booking_path(booking.id), method: :delete, data: { confirm: "Are you sure?" } %></p>
-      </div>
-      <% end %>
-</div>
 
+    <%= notice %>
+
+
+
+  <div>
+    <h1>Your Reservations</h1>
+  </div>
+
+  <div class="flex-container">
+     <% @bookings.each do |booking| %>
+     <div class="card card-plant" style="width: 18rem;">
+      <div class="row justify-content-center">
+     <h5 class="card-title"><%= cl_image_tag booking.plant.photos.first.key, height: 200, width: 300, crop: :fill %></h5>
+     <h5 class="card-plant-infos"><%= booking.plant.name  %></h5>
+     <p class="card-plant-infos">Start date: <%= booking.start_date %></p>
+     <p class="card-plant-infos">End date: <%=booking.end_date %></p>
+     <p><%= link_to "Cancel my booking ",booking_path(booking.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn-ghost"%></p>
+   </div>
+ </div>
+ <% end %>
+
+   <div id="fixedbutton">
+      <%= link_to 'Back to plants', plants_path, class: "btn-ghost" %>
+    </div>
+</div>
+</div>

@@ -3,11 +3,10 @@
 <%= simple_form_for(@plant) do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
-  <%= f.select :status, collection: Plant::STATUSES %>
   <%= f.input :address %>
   <%= f.input :price_per_day %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit "Add plant", class: "btn btn-primary" %>
+  <%= f.submit "Add plant", class: "btn-ghost" %>
 <% end %>
 
 </div>
