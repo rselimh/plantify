@@ -1,24 +1,28 @@
 <p id="notice"><%= notice %></p>
+
+
+<!------------------ CAROUSEL ------------------->
+
 <div class="container">
  <div class="row justify-content-center">
 
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
 
-  <div class="carousel-inner">
+    <div class="carousel-inner">
       <% @plant.photos.each_with_index do |photo, index| %>
-        <div class="carousel-item <%= 'active' if (index == 0) %>">
-          <%= cl_image_tag photo.key, create_derived: true, bytes_step: 20000, min_width: 200, max_width: 400, transformation: {
-  crop: :fill, aspect_ratio: "16:9", gravity: :auto}, class: 'd-block w-50' %>
+      <div class="carousel-item <%= 'active' if (index == 0) %>">
+        <%= cl_image_tag photo.key, create_derived: true, bytes_step: 20000, min_width: 200, max_width: 400, transformation: {
+          crop: :fill, aspect_ratio: "16:9", gravity: :auto}, class: 'd-block w-50' %>
         </div>
 
-      <% end %>
-  </div>
-   </div>
+        <% end %>
+      </div>
+    </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -29,38 +33,58 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
- <div class="container">
-  <h2> <%= @plant.name %> </h2>
-  <div class="flex-item">
-    <p> <em> Description: </em> <br>
-    <%= @plant.description %>
-  </div>
-  </div>
- </div>
+
+<!------------------ END OF CAROUSEL ------------------->
+
+
+<!------------------ MAIN CONTAINER ------------------->
+
+<div class="container">
+
+  <!------------------ 3 CARDS  ------------------->
+      <div style="margin-top: 30px; text-align:center; margin-bottom: 20px;"><h1> <%= @plant.name %></h1></div>
+
+
+  <div class="flex-container" >
+
+
+    <div class= "card card-plant">
+      <h2 class="card-plant-infos" style="margin-bottom: 20px;">
+        Description </h2>
+        <div class="flex-item">
+          <p class="card-plant-infos">
+            <%= @plant.description %>
+          </div>
+        </div>
+
+
+
+        <div class="card-plant">
+          <div class="card-plant-infos">
+            <div class="flex-container-grid">
+              <h2 class="card-plant-infos"> Rental details </h2>
+              <p><%= image_tag "home-52.svg", alt: "home-img",width: 20, class: 'show-img' %><%= @plant.address %></p>
+              <p><%= image_tag "payment.svg", alt: "payment-img",width: 20, class: 'show-img' %> Daily price: <%= @plant.price_per_day %>€</p>
+              <p><%= image_tag "available.svg", alt: "available-img",width: 20, class: 'show-img' %>Status: available ✔️</p>
+            </div>
+          </div>
+        </div>
+
+
  <div class="card-plant">
-  <div class="card-plant-infos">
-    <div class="flex-container-grid">
-    <p> <strong> Rental details </strong> </p>
-    <p><%= image_tag "home-52.svg", alt: "home-img",width: 20, class: 'show-img' %><%= @plant.address %></p>
-    <p><%= image_tag "payment.svg", alt: "payment-img",width: 20, class: 'show-img' %> daily price: <%= @plant.price_per_day %>€</p>
-    <p><%= image_tag "available.svg", alt: "available-img",width: 20, class: 'show-img' %>status:<%= @plant.status %></p>
-    <%= link_to 'Book this plant !', new_plant_booking_path(@plant), class: 'btn-ghost'%>
-   </div>
-  </div>
-  </div>
-  </div>
-      </div>
-    </div>
-    <br>
-    <br>
-    <br>
-     <div class="container">
+<%= render "bookings/new", plant: @plant, booking: @plant %>
+        </div>
+
+                     <!------------------ Buttons  ------------------->
+      <div  style="margin-top: 50px;margin-bottom: 50px;margin-left: 40px;">
+
       <%= link_to 'Back', plants_path, class: "btn-ghost" %>
       <%= link_to 'Edit', edit_plant_path(@plant), class: "btn-ghost"%>
       <%= link_to "Delete", plant_path(@plant), method: :delete, data: { confirm: "Are you sure?" }, class: "btn-ghost"%>
-      <%= link_to 'Book this plant !', new_plant_booking_path(@plant), class: 'btn-ghost'%>
 
-</div>
-</div>
+    </div>
+
+  </div>
+
 
 

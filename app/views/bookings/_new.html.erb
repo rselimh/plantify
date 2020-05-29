@@ -1,6 +1,6 @@
 <div class="container mx-auto mr-3">
-  <h1 >Book your plant 🌱</h1>
-  <%= simple_form_for [@plant, @booking] do |f| %>
+  <h2> Book your plant </h2>
+  <%= simple_form_for [ @plant, @booking ] do |f| %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
   <%= f.submit class: 'btn-ghost' %>
