@@ -32,7 +32,6 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    raise
     @plant = @booking.plant_id
     @booking.destroy
     authorize @booking

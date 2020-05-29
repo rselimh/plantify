@@ -1,14 +1,21 @@
+.cards {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+
 .card-plant {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  flex: 0 0 33.333333%;
   border-radius: 20px;
   margin: 5px;
   width: 90%;
   padding: 10px;
   text-align: center;
   padding-top: 0;
+  flex: 0 1 24%;
 }
 
 .card-plant > img {
