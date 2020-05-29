@@ -9,9 +9,16 @@
     </div>
   <div class="flex-container">
      <% @bookings.each do |booking| %>
+      <% if !booking.plant.photos.first.nil?%>
      <div class="card card-plant" style="width: 18rem;">
       <div class="row justify-content-center">
      <h5 class="card-title"><%= cl_image_tag booking.plant.photos.first.key, height: 200, width: 300, crop: :fill %></h5>
+    <% else%>
+    <div class="card card-plant" style="width: 18rem;">
+      <div class="row justify-content-center">
+     <h5 class="card-title"><%= image_tag "placeholder.png", alt: "placeholder-img", height: 200, width: 300 %></h5>
+      <% end %>
+
      <h5 class="card-plant-infos"><%= booking.plant.name  %></h5>
      <p class="card-plant-infos">Start date: <%= booking.start_date %></p>
      <p class="card-plant-infos">End date: <%=booking.end_date %></p>
